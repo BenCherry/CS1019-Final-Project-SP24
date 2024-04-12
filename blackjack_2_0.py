@@ -5,18 +5,6 @@ Created on Thu Apr 11 19:04:30 2024
 @author: cherrbear
 """
 
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 11 15:09:54 2024
-
-@author: CherrBear
-"""
-'''Should I make an if statement for entire player_hand sequence for
-hand values of less than 17 for their first 2 cards, and an else statement for
-values 17 - 20 to skip the draw sequence and move to the dealer?
-The current program skips player print statements occasionaly. The console
-shows the player initially had an 18, stored the value but didnt print, and 
-then moved to the dealer sequence '''
 
 import random
 
