@@ -1,17 +1,17 @@
+import random
+
+
 # -*- coding: utf-8 -*-
 """
 Created on Thu Apr 11 19:04:30 2024
 
-@author: cherrbear
-"""
-
-
-import random
+@author: cherrbear """
 
 #PLAYER HAND
 
 player_card1 = ((random.randint(1, 11)))#players 1st card
 player_card2 = 0#intialize 2nd card to be used below
+
 if player_card1 == 11:#if the player has an ACE, do this
     player_card2 = ((random.randint(1, 10)))#players 2nd card if up card == 11
     if player_card1 + player_card2 == 21:#if player has blackjack, do this / need to check if player == dealer
@@ -22,7 +22,6 @@ elif player_card1 == 10:#if the player has a 10 value card, do this
         print('Blackjack!')
 else:#if the player doesnt have an ACE or 10 value, do this
     player_card2 = ((random.randint(1, 11)))
-    
 
 player_hand = (player_card1#add players 2 cards together
                + player_card2)
@@ -32,21 +31,18 @@ player_hand = (player_card1#add players 2 cards together
 
 #DEALER HAND
 dealer_up_card = ((random.randint(1, 11)))
-
 print(f'{dealer_up_card} --> d1')#print test for dealers first card / need functionality for an ACE (11)
 dealer_hole_card = 0#initialize dealer hole card to be used below
+
 if dealer_up_card == 11:#if up card is  an ACE, do this
-    (dealer_hole_card := ((random.randint(1, 10))))
+    dealer_hole_card = ((random.randint(1, 10)))
     print('Would you like insurance?')#need to implement an insurance function
     if dealer_hole_card == 10:#if up card==ACE and hole card is 10, do this
         print('Dealer backjack')#declares BJ if first card is 11 2nd is 10 --> ADD if up card is 11 offer insurance
-    
-
 elif dealer_up_card == 10 and dealer_hole_card == 11:#if dealer has 10 up and an ACE, auto win/push
     print('Dealer blackjack')
 else:
-    (dealer_hole_card := ((random.randint(1, 11))))#if up card != 10 or 11, do this 
-    
+    dealer_hole_card = ((random.randint(1, 11)))#if up card != 10 or 11, do this 
 
 dealer_hand = (dealer_up_card
                + dealer_hole_card)#adds dealers  2 cards together
@@ -85,14 +81,14 @@ if 17 <= player_hand <= 21:#skips dealer turn if the player busts
             print(f'{dealer_hand}, dealer stays')
             
         elif dealer_hand >= 22:#stops the hand when dealer busts
-                print(f'{dealer_hand}, dealer busts!')
+            print(f'{dealer_hand}, dealer busts!')
 else:
     print('Better luck next time loser.')#tell them how you really feel                
 
-if player_hand > dealer_hand and player_hand <= 21:
+if dealer_hand < player_hand <= 21:
     #print(f'dealer has {dealer_hand}')
     print('You win, nice job!')
-elif dealer_hand > player_hand and dealer_hand <= 21:
+elif player_hand < dealer_hand <= 21:
     #print(f'dealer has {dealer_hand}')
     print('lol')
 elif player_hand == dealer_hand:

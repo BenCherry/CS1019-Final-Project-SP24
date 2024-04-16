@@ -5,8 +5,12 @@ Created on Thu Apr 11 20:34:08 2024
 @author: cherrbear
 """
 
-'''a dictionary containg a decks of cards'''
+
+#a dictionary containg a decks of cards
+
 import random
+#import numpy as np
+
 
 single_deck={
     "Two of Spades": 2, "Three of Spades": 3,
@@ -15,7 +19,7 @@ single_deck={
     "Eight of Spades": 8, "Nine of Spades": 9,
     "Ten of Spades": 10, "Jack of Spades": 10,
     "Queen of Spades": 10, "King of Spades": 10,
-    "Ace of Spades": 11,
+    "Ace of Spades": 11,    
     
     "Two of Diamonds": 2, "Three of Diamonds": 3,
     "Four of Diamonds": 4, "Five of Diamonds": 5,
@@ -43,15 +47,14 @@ single_deck={
     }
 
 
-print(single_deck)
+#**make a list of the keys from the dict, randomly select 2 from the list
+#**use list_name.pop(variable_with_2_keys[0]) and one with [1] for the index of the keys in the list
+#**to take them from the list. add them and go on with dealing the game
+
+
+
 random_value1 = random.choice(list(single_deck.values())) # .values gets the value of the key value pair(dict)
-random_value2 = random.choice(list(single_deck.values())) # .keys gets the key from the key value pair (dict)
+random_value2 = random.choice(list(single_deck.keys())) # .keys gets the key from the key value pair (dict)
 print(random_value1, random_value2)
-card1 = random_value1
-card2 = random_value2  
-print(card1, card2)
-
-hand = print(f'you have {card1 + card2}')
-
-
-
+rand_card = random.choice(list(single_deck()))
+print(rand_card)

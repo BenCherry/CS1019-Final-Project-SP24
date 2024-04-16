@@ -15,8 +15,9 @@ def buy_in():
             else:
                 print('Amount must be greater than 0.')#user enters a neg num
         else:
+            print(type(amount))
             print('Must be a number: $')#user enters a letter, symbol, etc...
-            
+    print(type(amount))      
     return amount#returns the value of amount 
 
 buy_in()
