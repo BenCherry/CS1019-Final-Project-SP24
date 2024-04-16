@@ -42,11 +42,6 @@ single_deck={
     "Ace": 11
     }
 
-#add the suits to the dictionaries and make one list of all 52 cards 
-#**make a list of the keys from the dict, randomly select 2 from the list
-#**use list_name.pop(variable_with_2_keys[0]) and one with [1] for the index of the keys in the list
-#**to take them from the list. add them and go on with dealing the game
-
 
 print(single_deck)
 random_value1 = random.choice(list(single_deck.values())) # .values gets the value of the key value pair(dict)
