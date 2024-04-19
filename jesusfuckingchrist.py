@@ -13,7 +13,12 @@ Created on Wed Apr 17 16:23:59 2024
 """
 import random
 
-my_list1 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11] 
+my_list1 = [
+    2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
+    2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
+    2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
+    2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11
+    ]
 player_hand = [] #creates empty player list to store cards 
 dealer_hand = []
 
