@@ -37,7 +37,6 @@ def hit(x):
         print('Time to shuffle!')
     return x
         
-
 #INPUT no arguments, starts game when called
 #PROCESSING calls deal_hand func, infinite loop, 
 #OUTPUT 
@@ -67,6 +66,7 @@ def start_game():
     
     house_hand()
     winning_hand()
+
 #INPUT
 #PROCESSING
 #OUTPUT
