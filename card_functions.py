@@ -4,6 +4,10 @@ Created on Thu Apr 18 20:25:14 2024
 
 @author: cherrbear
 
+
+Spring 2024 Intro to Programming w/ Python Term Project
+
+
 Functions dealing with removing cards from the card list and
 putting them in the player_hand and dealer_hand lists, and comparing
 the total value of the player_hand and dealer_hand lists to determine
@@ -16,6 +20,15 @@ import random
 #PROCESSING random item removed from list, assigned to player/dealer list
 #OUTPUT player or dealer list with the 2 random items
 def deal_hand(hand): 
+    """ 
+    Starts the hand giving 2 cards.
+    
+    Args:
+        a (list): The empty player or dealer_hand list.
+        
+    Returns:
+        list: List with 2 random values from my_list1.
+    """
     if len(hand) == 0:    
         for card in range(2): 
             card_index = random.randrange(len(my_list1))
@@ -26,6 +39,15 @@ def deal_hand(hand):
 #PROCESSING checks for items in list, random item removed, assign to list
 #OUTPUT adds random item to player/dealer, print statement if empty
 def hit(x):
+    """"
+    Draws a random 'card' from my_list1 and adds it to player/dealer list.
+        
+    Args:
+        a (list): player / dealer_hand list.
+        
+    Returns:
+        list: Value from my_list1 appended to player/dealer list.
+    """
     if my_list1: # checks for items in list, 1 or more items it executes
         card_index = random.randrange(len(my_list1))
         x.append(my_list1.pop(card_index))
@@ -37,6 +59,15 @@ def hit(x):
 #PROCESSING
 #OUTPUT
 def house_hand():
+    """
+    Determines if the dealer draws more cards or stays.
+
+    Args:
+        a (none) None.
+        
+    Returns:
+        list: Finished dealer_hand list.
+    """
     if sum(dealer_hand) < 17:
         while sum(dealer_hand) < 17:
             hit(dealer_hand)
@@ -48,6 +79,15 @@ def house_hand():
 #PROCESSING
 #OUTPUT
 def winning_hand():
+    """
+    Compares the hands and returns the result (win / lose/ push).
+
+    Args:
+        a (none): None.
+        
+    Returns:
+        str: Prints the winner.
+    """
     if sum(dealer_hand) > sum(player_hand):
         print(f'You have a {sum(player_hand)}, ' 
               f'dealer has a {sum(dealer_hand)}, dealer wins.')
