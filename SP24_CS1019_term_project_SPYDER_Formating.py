@@ -7,10 +7,12 @@ Created on Thu Apr 25 14:52:56 2024
 
 Needs more testing / a main function to run everyhting from
 
+NEED TO UPDATE DOCSTRINGS
+
 """
 
 
-my_list1 = [
+deck_1 = [
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
@@ -29,34 +31,34 @@ def deal_hand(hand):
         a (list): The empty player or dealer_hand list.
 
     Returns:
-        list: List with 2 random values from my_list1.
+        list: List with 2 random values from deck_1.
     """
     if len(hand) == 0:
         for card in range(2):
-            card_index = random.randrange(len(my_list1))
-            hand.append(my_list1.pop(card_index))
+            card_index = random.randrange(len(deck_1))
+            hand.append(deck_1.pop(card_index))
     return hand
 
 
 def hit(player_or_dealer):
     """"
-    Draw a random 'card' from my_list1 and adds it to player/dealer list.
+    Draw a random 'card' from deck_1 and adds it to player/dealer list.
 
     Args:
         a (list): player / dealer_hand list.
 
     Returns:
-        list: Value from my_list1 appended to player/dealer list.
+        list: Value from deck_1 appended to player/dealer list.
     """
-    if my_list1:  # checks for items in list, 1 or more items it executes
-        card_index = random.randrange(len(my_list1))
-        player_or_dealer.append(my_list1.pop(card_index))
+    if deck_1:  # checks for items in list, 1 or more items it executes
+        card_index = random.randrange(len(deck_1))
+        player_or_dealer.append(deck_1.pop(card_index))
     else:
         print('Time to shuffle!\n')
     return player_or_dealer
 
 
-def player():
+def player_turn():
     """
     NEEDS DOCSTRING
     """
@@ -67,8 +69,6 @@ def player():
             if player_count() is True:
                 break
             print(f'You hit for a total of: {sum(player_hand)}\n')
-            #if player_count() is True:
-                #break
         elif hand_signal != 'h':
             print(f'You stay with {sum(player_hand)}\n')
             break
@@ -84,7 +84,7 @@ def player_count():
     return bust
 
 
-def house_hand():
+def dealer_turn():
     """
     Determine if the dealer draws more cards or stays.
 
@@ -115,7 +115,7 @@ def dealer_count():
 
 def winning_hand():
     """
-    Compares the hands and returns the result (win / lose/ push).
+    Compare the hands and returns the result (win / lose/ push).
 
     Args:
         a (none): None.
@@ -124,7 +124,7 @@ def winning_hand():
         str: Prints the winner.
     """
     if dealer_count() is True:
-        print(f'Dealer busts with: {sum(dealer_hand)}'
+        print(f'Dealer busts with: {sum(dealer_hand)} '
               f'Player wins with: {sum(player_hand)}\n')
     elif player_count() is True:
         print(f'You bust with: {sum(player_hand)}\n')
@@ -138,11 +138,15 @@ def winning_hand():
         print("A push is a win\n")
 
 
-deal_hand(player_hand)
-print(f'You have: {sum(player_hand)}\n')
-deal_hand(dealer_hand)
-print(f'Dealer shows: {dealer_hand[0]}\n')  # Show dealer first card only
-player()
-house_hand()
-winning_hand()
-
+def main():
+    """
+    NEEDS DOCSTRING
+    """
+    deal_hand(player_hand)
+    print(f'You have: {sum(player_hand)}\n')
+    deal_hand(dealer_hand)
+    print(f'Dealer shows: {dealer_hand[0]}\n')  # Show dealer first card only
+    player_turn()
+    dealer_turn()
+    winning_hand()
+main()
