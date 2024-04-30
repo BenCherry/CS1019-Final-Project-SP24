@@ -1,2 +1,3 @@
-# other-blackjack-game
-Second CS 1019 Blackjack Simulator
+# CS1019 Term Project SP2024
+
+Program discription???
