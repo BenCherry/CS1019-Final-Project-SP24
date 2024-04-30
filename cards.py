@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Apr 26 16:00:54 2024
+Created on Fri Apr 26 16:00:54 2024.
 
 @author: CherrBear
 
@@ -39,7 +39,7 @@ def deal_hand(hand):
 
 
 def hit(player_or_dealer):
-    """"
+    """
     Draw a random 'card' from deck_1 and adds it to player/dealer list.
 
     Args:

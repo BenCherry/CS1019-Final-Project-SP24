@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Apr 26 16:05:44 2024
+Created on Fri Apr 26 16:05:44 2024.
 
 @author: CherrBear
 
@@ -12,7 +12,8 @@ FUNCS PLAYER/DEALER_COUNT DETERMINE IF THE HAND BUSTS
 
 """
 
-from cards import deal_hand, hit
+from cards import hit
+from cards import player_hand, dealer_hand
 
 
 def player_turn():
@@ -58,7 +59,7 @@ def dealer_turn():
         print(f'Dealer hits for a total of: {sum(dealer_hand)}\n')
         if dealer_count() is True:
             break
-        
+
 
 def dealer_count():
     """
@@ -68,4 +69,3 @@ def dealer_count():
     if sum(dealer_hand) > 21:
         bust = True
     return bust
-
