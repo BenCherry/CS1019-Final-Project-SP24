@@ -22,6 +22,7 @@ dealer_hand = []
 
 discard = []  # Intialize an empty discard rack.
 
+
 def deal_hand(hand):
     """
     Start the hand giving 2 cards.
@@ -49,59 +50,66 @@ def hit(player_or_dealer):
     Returns:
         list: Value from deck_1 appended to player/dealer list.
     """
-    if deck_1:  # checks for items in list, 1 or more items it executes
+    if deck_1:
         card_index = random.randrange(len(deck_1))
         player_or_dealer.append(deck_1.pop(card_index))
-    else:
-        print('Time to shuffle!\n\n')
-        
-        #  SHUFFLE FUNCTION HERE
-    
+
     return player_or_dealer
 
-    
-def discards(player, dealer):
+
+def discards(players_hand, dealers_hand):
     """
     Collect player and dealer cards after the hand.
-    
+
     Args:
-        a (list): Player or dealer list values after hand.
-        
+        a (list): Player list with elements.
+        b (list): Dealer list with elements.
     Returns:
         None.
     """
     if len(deck_1) <= 15:
-        global discard
-       
         discard.extend(deck_1)
-        discard.extend(player_hand)
-        discard.extend(dealer_hand)
+        print('discard.extend(deck_1)  if')
+        
+        discard.extend(players_hand)
+        players_hand.clear()
+        print('discard.extend(players_hand) if')
+        
+        discard.extend(dealers_hand)
+        dealers_hand.clear()
+        print('discard.extend(dealers_hand)  if')
+        
         shuffle()
-        print(f'SHUFFLE DECK: {deck_1} \n\n DISCARD: {discard}')
+        print('shuffle  if')
+
     else:
-        discard.extend(player_hand)
-        player_hand.clear()
-        print(player_hand)
-        discard.extend(dealer_hand)
-        dealer_hand.clear()
-        print(dealer_hand)
+        discard.extend(players_hand)
+        print('discard.extend(players_hand)  else')
         
-        print(f'\n\n\nDeck 1: {deck_1} \n\n{len(deck_1)}\n\n\n')
+        players_hand.clear()
+        print('players_hand.clear()  else')
         
-    print(discard)
-    return discard
-    
-    
+        discard.extend(dealers_hand)
+        print('discard.extend(dealers_hand)  else')
+        
+        dealers_hand.clear()
+        print('dealers_hand.clear()  else')
+
+        print(f'\nDeck 1:Cards Remaining: {len(deck_1)}')
+        print(f'Discard list cards: {len(discard)}\n')
+
+
 def shuffle():
     """
-    Return cards to deck_1 when theres 15 or less.
-    
+    Clear remaining deck_1 elements, then add 52 from discard.
+
     Args:
         None.
-        
+
     Returns:
         None.
     """
+    deck_1.clear()
     deck_1.extend(discard)
     discard.clear()
-    print(f'SHUFFLE DECK: {deck_1} \n\n DISCARD: {discard}')
+    print(f'\nSHUFFLE DECK: {len(deck_1)} DISCARD: {len(discard)}')

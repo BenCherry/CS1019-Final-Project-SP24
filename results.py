@@ -11,6 +11,7 @@ from gameplay import dealer_count
 from gameplay import player_count
 from cards import discards
 
+
 def winning_hand(player_hand, dealer_hand):
     """
     Compare the hands and returns the result (win / lose/ push).
@@ -38,5 +39,3 @@ def winning_hand(player_hand, dealer_hand):
 
     elif sum(dealer_hand) > sum(player_hand):
         print(f'Dealer wins with a {sum(dealer_hand)}\n\n')
-
-    

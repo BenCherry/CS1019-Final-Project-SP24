@@ -28,12 +28,12 @@ def player_turn():
     """
     while sum(player_hand) < 21:
         hand_signal = input('Press "H" to hit, or any key to stay: \n\n')
-        if hand_signal == 'h':
+        if hand_signal.upper() == 'H':
             hit(player_hand)
             if player_count() is True:
                 break
             print(f'You hit for a total of: {sum(player_hand)}\n\n')
-        elif hand_signal != 'h':
+        elif hand_signal != 'H':
             print(f'You stay with {sum(player_hand)}\n\n')
             break
 
@@ -41,17 +41,17 @@ def player_turn():
 def player_count():
     """
     Set bust to False, or True if player_hand > 21.
-    
+
     Args:
-        None.
-        
+        a (list): player_hand list with elements.
+
     Returns:
         bool: bust as True or False.
     """
-    bust = False
+    player_bust = False
     if sum(player_hand) > 21:
-        bust = True
-    return bust
+        player_bust = True
+    return player_bust
 
 
 def dealer_turn():
@@ -65,7 +65,7 @@ def dealer_turn():
         list: Finished dealer_hand list.
     """
     while sum(dealer_hand) < 17:
-        if player_count is True:  # Skip dealer draw if player_hand > 21
+        if player_count() is True:  # Skip dealer draw if player_hand > 21
             break
         hit(dealer_hand)
         print(f'Dealer hits for a total of: {sum(dealer_hand)}\n\n')
@@ -76,14 +76,14 @@ def dealer_turn():
 def dealer_count():
     """
     Set bust to False, or True if dealer_hand > 21.
-    
+
     Args:
-        None.
-        
+        a (list): dealer_hand list with elements.
+
     Returns:
         bool: bust as True or False.
     """
-    bust = False
+    dealer_bust = False
     if sum(dealer_hand) > 21:
-        bust = True
-    return bust
+        dealer_bust = True
+    return dealer_bust
