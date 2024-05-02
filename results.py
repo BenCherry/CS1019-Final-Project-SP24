@@ -9,7 +9,6 @@ THIS MODULE COMPARES AND DETERMINES THE WINNING HAND
 """
 from gameplay import dealer_count
 from gameplay import player_count
-from cards import discards
 
 
 def winning_hand(player_hand, dealer_hand):

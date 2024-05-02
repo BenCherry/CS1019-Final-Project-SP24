@@ -26,10 +26,10 @@ def start_game():
         None.
     """
     deal_hand(player_hand)
-    print(f'You have: {sum(player_hand)}\n\n')
+    print(f'You have: {sum(player_hand)}\n')
 
     deal_hand(dealer_hand)
-    print(f'Dealer shows: {dealer_hand[0]}\n\n')  # Show dealer first card only
+    print(f'Dealer shows: {dealer_hand[0]}\n')  # Show dealer first card only
 
     player_turn()
     dealer_turn()
