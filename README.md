@@ -3,7 +3,7 @@
 A console-based blackjack game 
 
 
-This is a blakjack simulator that allows the user to play single deck 
+This is a blackjack simulator that allows the user to play single deck 
 blackjack.
 
 Cards are randomly drawn from a deck , and added to the player and dealer lists.
