@@ -6,6 +6,10 @@ Created on Sat May  4 13:32:57 2024
 
 Main function that runs the program.
 
+This is a blackjack simulator that allows the user to play single deck blackjack.
+My goal was to match the programs logic to the actual procedures and flow of a
+real blackjack game.
+
 """
 
 

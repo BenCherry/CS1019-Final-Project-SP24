@@ -6,6 +6,12 @@ Created on Fri Apr 26 16:00:54 2024.
 
 This module handles list initialization and card operations.
 
+aces function - In blackjack, an Ace can be worth 11 or 1 depending on
+the hand total. A single ace in a hand is worth 11, until the hand total
+goes over 21, at which point it becomes a 1.
+
+example_hand: (deal) Ace + 5 == 16 (draw) + 10 == 26 (adjust) == 16 (1 + 5 + 10)
+
 """
 
 
@@ -31,7 +37,7 @@ def deal_hand(hand):
         hand (list): The empty player or dealer_hand list.
 
     Returns:
-        int: Local variable with integer value of the hand.
+        int: The total value of the hand.
 
     """
     if len(hand) == 0:
@@ -44,13 +50,13 @@ def deal_hand(hand):
 
 def aces(hand):
     """
-    Change 'Ace' value based on hand total and / or multiple 'Aces'
+    Change 'Ace' value to 1 or 11 based on hand total.
 
     Args:
         hand (list): Player or dealer_hand list.
 
     Returns:
-        int: Local variable with the updated hand value.
+        int: The adjusted total value of the hand.
     """
     total = sum(hand)
     ace = hand.count(11)
@@ -69,7 +75,7 @@ def hit(hand):
         hand (list): Player or dealer_hand list.
 
     Returns:
-        int: Local variable with the updated hand value.
+        int: The adjusted total value of the hand.
     """
     card_index = random.randrange(len(deck_1))
     hand.append(deck_1.pop(card_index))
@@ -84,26 +90,26 @@ def discards(players_hand, dealers_hand):
     Collect cards after the hand and shuffle if needed. 
 
     Args:
-        players_hand (list): Player list with elements.
+        players_hand (list): Player list.
 
-        dealers_hand (list): Dealer list with elements.
+        dealers_hand (list): Dealer list.
 
     Returns:
         None.
     """
-    if len(deck_1) <= 15:
-        discard.extend(deck_1)
+    if len(deck_1) <= 15:  # About how many cards left before shuffling a real 1 deck game.
+        discard.extend(deck_1)  # Add remaining cards in the deck to discard.
 
-        discard.extend(players_hand)
+        discard.extend(players_hand)  # Add player cards to discard.
         players_hand.clear()
 
-        discard.extend(dealers_hand)
+        discard.extend(dealers_hand)  # Add dealer cards to discard.
         dealers_hand.clear()
 
         shuffle()
 
     else:
-        discard.extend(players_hand)
+        discard.extend(players_hand)  # Discard player and dealer cards only if not shuffling.
         players_hand.clear()
 
         discard.extend(dealers_hand)
