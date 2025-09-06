@@ -14,7 +14,6 @@ example_hand: (deal) Ace + 5 == 16 (draw) + 10 == 26 (adjust) == 16 (1 + 5 + 10)
 
 """
 
-
 import random
 deck_1 = [
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
@@ -27,7 +26,6 @@ player_hand = []  # Creates empty player list to store cards.
 dealer_hand = []  # Creates empty dealer list to store cards.
 
 discard = []  # Intialize an empty discard rack.
-
 
 def deal_hand(hand):
     """
@@ -47,7 +45,6 @@ def deal_hand(hand):
     hand_total = aces(hand)
     return hand_total
 
-
 def aces(hand):
     """
     Change 'Ace' value to 1 or 11 based on hand total.
@@ -66,7 +63,6 @@ def aces(hand):
         ace -= 1
     return total
 
-
 def hit(hand):
     """
     Draw a card and assign a new hand value.
@@ -83,7 +79,6 @@ def hit(hand):
     hand_total = aces(hand)
 
     return hand_total
-
 
 def discards(players_hand, dealers_hand):
     """
@@ -114,7 +109,6 @@ def discards(players_hand, dealers_hand):
 
         discard.extend(dealers_hand)
         dealers_hand.clear()
-
 
 def shuffle():
     """
