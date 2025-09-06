@@ -11,7 +11,6 @@ This module handles gameplay related to player and dealer decisions.
 from cards import hit
 from cards import player_hand, dealer_hand
 
-
 def player_turn(players_total):
     """
     Determine if the player draws more cards, busts, or stays.
@@ -34,7 +33,6 @@ def player_turn(players_total):
             break
     return players_total
 
-
 def player_count(players_total):
     """
     Set bust to False, or True if player_hand > 21.
@@ -49,7 +47,6 @@ def player_count(players_total):
     if players_total > 21:
         player_bust = True
     return player_bust
-
 
 def dealer_turn(dealers_total, players_total):
     """
@@ -73,7 +70,6 @@ def dealer_turn(dealers_total, players_total):
         if dealer_count(dealers_total) is True:
             break
     return dealers_total
-
 
 def dealer_count(dealers_total):
     """
