@@ -20,14 +20,13 @@ from gameplay import player_turn, dealer_turn
 
 from results import winning_hand
 
-
 def start_game():
     """
     Call functions that run the game.
-
     Args:
+    
         None.
-
+    
     Returns:
         None.
     """
@@ -48,3 +47,4 @@ def start_game():
 
     print(f'Cards Remaining: {len(deck_1)} \n\n{deck_1} '   # Cards remaining
           f'\n\nCards Used: {len(discard)} \n\n{discard}')  # Discards
+
