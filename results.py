@@ -10,7 +10,6 @@ This module compares the final total of the hands and outputs the result.
 
 from gameplay import player_count, dealer_count
 
-
 def winning_hand(player_totals, dealer_totals):
     """
     Compare the hands and returns the result (win/ lose/ push).
