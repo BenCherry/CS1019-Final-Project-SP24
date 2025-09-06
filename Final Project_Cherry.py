@@ -9,12 +9,9 @@ Main function that runs the program.
 This is a blackjack simulator that allows the user to play single deck blackjack.
 My goal was to match the programs logic to the actual procedures and flow of a
 real blackjack game.
-
 """
 
-
 from start import start_game
-
 
 def main():
     """
@@ -26,7 +23,6 @@ def main():
     Returns:
         None.
     """
-
     user_start = ' '
 
     while user_start not in ['P', 'Q']:
@@ -41,6 +37,6 @@ def main():
         else:
             print('Enter a valid choice.\n')
 
-
 if __name__ == '__main__':
     main()
+
